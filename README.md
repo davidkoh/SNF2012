@@ -21,10 +21,13 @@ For my analysis I primarily used the pandas package in Python to perform statist
 Furthermore, the percentages of men and women by race who were subsequently frisked and then arrested were similar to the percentages of the people who were stopped. Choosing to focus on a comparison of Black men versus White men the percentage of stops in Black men led to 5% of those stopped being arrested while the percentage of stops in White men that led to arrests was higher at 6%. 
 
 ###Predicting for 'frisked' people###
-  1. Wanted to create array that did not contain strings or location-based data.
-  2. PCA to reduce dimensions with clustering? 
-  3. Used Random Forest to classify as those 'frisked' or not 'frisked'
-  4. Performed Cross Validation
+To determine whether or not a person would be frisked I decided to use 2 models: Random Forests and Logistic Regression. I prepared the data by going through and removing features that would be highly correlated with a frisk such as those features that stated “reason for frisk” as these features would always match up with those who were frisked. There were also several categorical features, such as “hair color”, “race”, “sex”, and “borough.” For each of these I created dummy features so that eventually I was left with 60 different features. 
+
+After the data was cleaned and prepped I fit the data to a Random Forests model. Using the default score function I was able to get an accuracy of over 98% but this was too good to be true. After performing a 5-fold cross validation the accuracy dropped to 73% even though this would still prove to be the most accurate model to predict whether or not someone was frisked. I also tried to implement PCA with 15 components before using Random Forests. Doing so decreased the accuracy to 67%. 
+
+For comparison I also tried performing a Logistic Regression. Using Logistic Regression I was able to get an accuracy of 56%. To see how it would be affected using PCA I used that in conjunction with Logistic Regression which again decreased the accuracy, this time to 52%. 
+
+Therefore in my analysis Random Forests was the best model in predicting whether or not a person was frisked. Since PCA creates new features (aka components) to make predictions I decided to compare the features used without PCA against just using “race”, “sex”, and “age” with Random Forests, which yielded an accuracy of XX%. Although using “race”, “sex”, and “age” with Random Forests still did a better job of predicting than the other combinations using more features helped better predict whether or not someone was frisked. 
 
 ##Conclusion##
 
