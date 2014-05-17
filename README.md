@@ -27,7 +27,7 @@ After the data was cleaned and prepped I fit the data to a Random Forests model.
 
 For comparison I also tried performing a Logistic Regression. Using Logistic Regression I was able to get an accuracy of 56%. To see how it would be affected using PCA I used that in conjunction with Logistic Regression which again decreased the accuracy, this time to 52%. 
 
-Therefore in my analysis Random Forests was the best model in predicting whether or not a person was frisked. Since PCA creates new features (aka components) to make predictions I decided to compare the features used without PCA against just using “race”, “sex”, and “age” with Random Forests, which yielded an accuracy of XX%. Although using “race”, “sex”, and “age” with Random Forests still did a better job of predicting than the other combinations using more features helped better predict whether or not someone was frisked. 
+Therefore in my analysis Random Forests was the best model in predicting whether or not a person was frisked. Since PCA creates new features (aka components) to make predictions I decided to compare the features used without PCA against just using “race”, “sex”, and “age” with Random Forests, which yielded an accuracy of 62%. Although using “race”, “sex”, and “age” with Random Forests still did a better job of predicting than the other combinations using more features helped better predict whether or not someone was frisked. 
 
 ##Conclusion##
 
